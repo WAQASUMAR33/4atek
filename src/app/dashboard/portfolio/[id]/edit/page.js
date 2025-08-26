@@ -4,12 +4,12 @@
 import { useEffect, useRef, useState } from "react";
 import { useParams, useRouter } from "next/navigation";
 import { EditorContent, useEditor } from "@tiptap/react";
-import StarterKit from "@tiptap/starter-kit";
-import LinkExt from "@tiptap/extension-link";
-import ImageExt from "@tiptap/extension-image";
-import Underline from "@tiptap/extension-underline";
-import TextStyle from "@tiptap/extension-text-style";
-import Color from "@tiptap/extension-color";
+import {StarterKit }from "@tiptap/starter-kit";
+import {LinkExt} from "@tiptap/extension-link";
+import {ImageExt} from "@tiptap/extension-image";
+import {Underline} from "@tiptap/extension-underline";
+import { TextStyle } from '@tiptap/extension-text-style';
+import {Color } from "@tiptap/extension-color";
 import { uploadImageFile } from "@/app/lib/upload"; // ← NEW
 import Image from "next/image";
 
