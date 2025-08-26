@@ -1,0 +1,55 @@
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+
+// ---------------- services ----------------
+model Service {
+  id         String   @id @default(cuid())
+  title      String
+  slug       String   @unique
+  subtitle   String?
+  coverImage String?  @map("coverimage")
+  image1     String?
+  details    String?  @db.Text
+  highlights String?  @db.Text
+  q1         String?
+  q2         String?
+  q3         String?
+  q4         String?
+  q5         String?
+  createdAt  DateTime @default(now()) @map("created-at")
+  updatedAt  DateTime @updatedAt      @map("updated-at")
+
+  @@map("services")
+  @@index([updatedAt])
+}
+
+enum PublishStatus {
+  DRAFT
+  PUBLISHED
+}
+
+model Portfolio {
+  id          String         @id @default(cuid())
+  title       String
+  slug        String         @unique
+  image       String?
+  shortDes    String?        @map("short-des")
+  context     String?        @db.Text
+  url         String?
+  contentHtml String?        @db.LongText
+  status      PublishStatus  @default(PUBLISHED)  // ← lives on the same table
+  createdAt   DateTime       @default(now()) @map("created-at")
+  updatedAt   DateTime       @updatedAt      @map("updated-at")
+
+  @@map("portfolio")
+  @@index([updatedAt])
+  @@index([status]) // optional, helps list queries by status
+}

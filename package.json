@@ -1,0 +1,46 @@
+{
+  "name": "a4tech",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "postinstall": "prisma generate",
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@prisma/client": "^6.14.0",
+    "@tailwindcss/typography": "^0.5.16",
+    "@tiptap/extension-color": "^3.2.0",
+    "@tiptap/extension-image": "^3.2.0",
+    "@tiptap/extension-link": "^3.2.0",
+    "@tiptap/extension-text-style": "^3.2.0",
+    "@tiptap/extension-underline": "^3.2.0",
+    "@tiptap/react": "^3.2.0",
+    "@tiptap/starter-kit": "^3.2.0",
+    "clsx": "^2.1.1",
+    "country-flag-icons": "^1.5.19",
+    "framer-motion": "^12.23.12",
+    "lucide-react": "^0.539.0",
+    "mysql": "^2.18.1",
+    "next": "^15.0.2",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-google-recaptcha": "^3.1.0",
+    "react-tsparticles": "^2.12.2",
+    "rm": "^0.1.8",
+    "sanitize-html": "^2.17.0",
+    "swr": "^2.3.6",
+    "tiptap": "^1.32.2",
+    "tsparticles-slim": "^2.12.0"
+  },
+  "devDependencies": {
+    "@eslint/eslintrc": "^3",
+    "@tailwindcss/postcss": "^4",
+    "eslint": "^9",
+    "eslint-config-next": "15.4.6",
+    "prisma": "^6.14.0",
+    "tailwindcss": "^4"
+  }
+}
