@@ -73,7 +73,7 @@ export default function Unlock() {
                             Our multidisciplinary team of designers, developers, and strategists work
                             collaboratively to bring your vision to life. From initial concept to final
                             deployment, we ensure every detail is crafted with precision and purpose.
-                            Whether you're launching a new product or enhancing an existing platform,
+                            Whether you&apos;re launching a new product or enhancing an existing platform,
                             we provide the expertise and support you need to succeed in the digital realm.
                         </p>
                     </motion.div>

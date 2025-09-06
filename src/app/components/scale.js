@@ -86,7 +86,7 @@ export default function ScaleWithTeams() {
                                     className="font-extrabold leading-[1.05] text-[#19d3c5]
                              text-3xl sm:text-4xl lg:text-[45px]"
                                 >
-                                    Building Tomorrow's Digital Solutions Today 
+                                    Building Tomorrow&apos;s Digital Solutions Today 
                                 </h2>
 
                                 <p className="mt-6 max-w-2xl text-white/90 text-[15px] sm:text-[16px] leading-7">

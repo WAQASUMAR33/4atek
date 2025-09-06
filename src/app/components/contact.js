@@ -79,7 +79,7 @@ export default function ContactOverlay() {
                                 Ready to Transform Your Business with 4A Tek?
                             </h2>
                             <p className="mt-3 text-[14px] leading-6 text-white/90">
-                                Take your business to the next level with 4A Tek's comprehensive digital solutions.
+                                Take your business to the next level with 4A Tek&apos;s comprehensive digital solutions.
                                 We specialize in creating innovative web applications, mobile apps, and strategic
                                 technology consulting that drives real results and measurable growth.
                             </p>

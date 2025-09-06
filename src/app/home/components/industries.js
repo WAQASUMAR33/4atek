@@ -95,7 +95,7 @@ export default function IndustriesSection() {
 
                         <p className="mt-6 max-w-2xl text-[15px] sm:text-[16px] leading-7 text-[#1D2939]">
                             At 4A Tek, we specialize in delivering AI-powered, data-driven digital solutions 
-                            tailored to the unique challenges and workflows of each industry. Whether you're 
+                            tailored to the unique challenges and workflows of each industry. Whether you&apos;re 
                             transforming legacy systems or building next-gen platforms from scratch, our 
                             cross-domain expertise ensures scalable and secure innovation at every step.
                         </p>

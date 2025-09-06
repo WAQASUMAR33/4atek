@@ -70,7 +70,7 @@ export default function ClientSatisfaction() {
                         translating it into powerful digital experiences. Our collaborative approach
                         ensures that every solution we create is perfectly aligned with your business
                         objectives, delivering not just what you asked for, but what you truly need
-                        to thrive in today's competitive marketplace.
+                        to thrive in today&apos;s competitive marketplace.
                     </p>
 
                     <p className="mt-5 sm:mt-6 text-[16px] leading-7 text-white/90">
