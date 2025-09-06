@@ -5,12 +5,12 @@ import { motion } from "framer-motion";
 
 const fadeUp = {
     hidden: { opacity: 0, y: 22 },
-    show: { opacity: 1, y: 0, transition: { duration: 0.55, ease: "easeOut" } },
+    show: { opacity: 1, y: 0, transition: { duration: 0.9, ease: "easeOut" } },
 };
 
 const fadeInLeft = {
     hidden: { opacity: 0, x: -40 },
-    show: { opacity: 1, x: 0, transition: { duration: 0.6, ease: "easeOut", delay: 0.05 } },
+    show: { opacity: 1, x: 0, transition: { duration: 1.0, ease: "easeOut", delay: 0.1 } },
 };
 
 export default function AccelerateSection() {
@@ -57,23 +57,23 @@ export default function AccelerateSection() {
                     text-[20px] sm:text-[35px] md:text-[40px] leading-[1.08]
                     "
                         >
-                            Accelerate Your Growth with
+                            Transform Your Vision Into Reality with
                             4A Tek
                         </h2>
 
                         <p className="mt-6 max-w-3xl text-[13px] sm:text-[15px] leading-6 text-[#1D2939]">
-                            Unlock new opportunities and propel your business forward with our innovative solutions.
+                            Experience the power of cutting-edge technology and strategic innovation that drives measurable results for your business.
                         </p>
 
                         <p className="mt-5 max-w-3xl text-[13px] sm:text-[15px] leading-6 text-[#1D2939]">
-                            At 4A Tek, we understand the challenges that businesses face in today’s competitive landscape.
-                            That’s why we’re committed to providing tailored solutions that drive growth and success.
+                            At 4A Tek, we specialize in crafting digital experiences that captivate audiences and convert prospects into loyal customers.
+                            Our comprehensive approach combines creativity with technical excellence to deliver solutions that exceed expectations.
                         </p>
 
                         <p className="mt-5 max-w-3xl text-[13px] sm:text-[15px] leading-6 text-[#1D2939]">
-                            Whether you’re looking to streamline processes, enhance customer experiences, or optimize your
-                            digital presence, our team of experts is here to help you achieve your goals. With our proven
-                            track record of delivering results, you can trust us to be your partner in success.
+                            From concept to launch, we handle every aspect of your digital transformation journey. Our multidisciplinary team
+                            brings together design expertise, development prowess, and strategic thinking to create solutions that not only
+                            meet your current needs but scale with your future ambitions. Partner with 4A Tek and watch your business soar.
                         </p>
                     </motion.div>
                 </div>

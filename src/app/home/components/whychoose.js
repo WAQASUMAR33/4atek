@@ -4,29 +4,29 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 
 const bullets = [
-    "Specialized in crafting MVPs from inception to launch, tailored to your unique market needs.",
-    "Proven track record of guiding startups through successful fundraising campaigns & securing vital investments.",
-    "Budget-friendly solutions designed to optimize resources and accelerate growth without compromising quality.",
-    "Dedicated support from a team passionate about your success, committed to delivering tangible results.",
-    "Collaborative partnership approach focused on fueling innovation and driving sustainable growth for your startup.",
+    "Expertise in end-to-end digital solutions, from concept development to market-ready products that drive real results.",
+    "Comprehensive technology consulting that helps businesses make informed decisions and optimize their digital strategy.",
+    "Cost-effective solutions that maximize your ROI while delivering premium quality and exceptional user experiences.",
+    "Personalized approach with dedicated project managers who ensure seamless communication and timely delivery.",
+    "Long-term partnership mindset that grows with your business, providing ongoing support and scalable solutions.",
 ];
 
 // animations
 const fadeUp = {
     hidden: { opacity: 0, y: 20 },
-    show: { opacity: 1, y: 0, transition: { duration: 0.55, ease: "easeOut" } },
+    show: { opacity: 1, y: 0, transition: { duration: 1.2, ease: "easeOut" } },
 };
 const fadeInRight = {
     hidden: { opacity: 0, x: 40 },
-    show: { opacity: 1, x: 0, transition: { duration: 0.6, ease: "easeOut", delay: 0.05 } },
+    show: { opacity: 1, x: 0, transition: { duration: 1.3, ease: "easeOut", delay: 0.15 } },
 };
 const listStagger = {
     hidden: {},
-    show: { transition: { staggerChildren: 0.08, delayChildren: 0.1 } },
+    show: { transition: { staggerChildren: 0.25, delayChildren: 0.3 } },
 };
 const item = {
     hidden: { opacity: 0, y: 10 },
-    show: { opacity: 1, y: 0, transition: { duration: 0.35, ease: "easeOut" } },
+    show: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } },
 };
 
 export default function WhyChooseSection() {
@@ -86,7 +86,7 @@ export default function WhyChooseSection() {
               "
                         >
                             Why Choose 4A Tek for
-                            <br className="hidden md:block" /> Your Startup?
+                            <br className="hidden md:block" /> Your Business?
                         </h2>
 
                         <motion.ul

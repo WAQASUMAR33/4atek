@@ -24,7 +24,7 @@ function parseQA(str) {
 }
 
 /* ---------- simple hero ---------- */
-function Hero({ title, subtitle, bgImage = "/assets/services-page/bi-hero.png" }) {
+function Hero({ title, subtitle, bgImage = "/assets/bi-hero.jpg" }) {
     return (
         <section className="relative">
             <div className="relative h-[54vh] min-h-[360px] w-full">

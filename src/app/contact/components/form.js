@@ -14,11 +14,11 @@ import {
 /* ----- Animations ----- */
 const fadeUp = {
     hidden: { opacity: 0, y: 18 },
-    show: { opacity: 1, y: 0, transition: { duration: 0.55, ease: "easeOut" } },
+    show: { opacity: 1, y: 0, transition: { duration: 0.9, ease: "easeOut" } },
 };
 const stagger = {
     hidden: {},
-    show: { transition: { staggerChildren: 0.06, delayChildren: 0.1 } },
+    show: { transition: { staggerChildren: 0.12, delayChildren: 0.2 } },
 };
 
 export default function ContactPageForm() {

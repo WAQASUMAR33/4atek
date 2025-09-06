@@ -6,15 +6,15 @@ import { motion } from "framer-motion";
 // ---- animations
 const fadeUp = {
     hidden: { opacity: 0, y: 18 },
-    show: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } },
+    show: { opacity: 1, y: 0, transition: { duration: 0.9, ease: "easeOut" } },
 };
 const gridStagger = {
     hidden: {},
-    show: { transition: { staggerChildren: 0.06, delayChildren: 0.08 } },
+    show: { transition: { staggerChildren: 0.12, delayChildren: 0.15 } },
 };
 const logoIntro = {
     hidden: { opacity: 0, scale: 0.98 },
-    show: { opacity: 1, scale: 1, transition: { duration: 0.35, ease: "easeOut" } },
+    show: { opacity: 1, scale: 1, transition: { duration: 0.7, ease: "easeOut" } },
 };
 
 // ---- logos with new folder & naming
@@ -43,7 +43,7 @@ export default function TrustedBy() {
                     Trusted by{" "}
                     <span className="align-middle inline-block rounded-xl border-2 border-[#0f6f70] px-3 py-1
                            text-[#0f6f70] bg-white">
-                        250+
+                        100+
                     </span>{" "}
                     companies small business & industry leaders alike
                 </motion.h2>

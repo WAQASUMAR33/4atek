@@ -13,21 +13,21 @@ import {
 // Data
 const FEATURES = [
     {
-        title: "We Listen and Improve",
+        title: "Strategic Partnership",
         desc:
-            "We start by understanding your business objectives. All decisions are made with your goals in mind. We listen to your feedback and provide suggestions to enhance your website’s effectiveness.",
+            "At 4A Tek, we begin every project by deeply understanding your business vision and objectives. Our collaborative approach ensures that every solution we create is perfectly aligned with your goals and drives measurable results.",
         Icon: Ear,
     },
     {
-        title: "Integrity Matters",
+        title: "Transparent Excellence",
         desc:
-            "We conduct business honestly, ethically, and with genuine concern for your well-being. We won’t sell you anything you don’t need. You can trust us to always be courteous and respectful.",
+            "4A Tek operates with complete transparency and ethical business practices. We provide honest recommendations, clear communication, and deliver exactly what we promise, building lasting relationships based on trust and mutual respect.",
         Icon: ShieldCheck,
     },
     {
-        title: "Unique Designs",
+        title: "Innovative Solutions",
         desc:
-            "We create one-of-a-kind site designs to elevate your company’s status and outperform your competition. A professional website enhances your reputation and attracts clients.",
+            "Our creative team at 4A Tek specializes in developing cutting-edge digital solutions that set your business apart from the competition. We combine innovative design with advanced technology to create exceptional user experiences.",
         Icon: Sparkles,
     },
     {
@@ -53,7 +53,7 @@ const FEATURES = [
 // Animations
 const gridStagger = {
     hidden: {},
-    show: { transition: { staggerChildren: 0.08, delayChildren: 0.1 } },
+    show: { transition: { staggerChildren: 0.15, delayChildren: 0.2 } },
 };
 
 const cardAnim = {
@@ -62,7 +62,7 @@ const cardAnim = {
         opacity: 1,
         y: 0,
         scale: 1,
-        transition: { duration: 0.45, ease: "easeOut" },
+        transition: { duration: 0.7, ease: "easeOut" },
     },
 };
 

@@ -27,13 +27,13 @@ const testimonials = [
 
 const fadeUp = {
     hidden: { opacity: 0, y: 18 },
-    show: { opacity: 1, y: 0, transition: { duration: 0.55, ease: "easeOut" } },
+    show: { opacity: 1, y: 0, transition: { duration: 1.2, ease: "easeOut" } },
 };
 
 const slideVariants = {
     enter: { opacity: 0, x: -24 },
-    center: { opacity: 1, x: 0, transition: { duration: 0.45, ease: "easeOut" } },
-    exit: { opacity: 0, x: 24, transition: { duration: 0.35, ease: "easeIn" } },
+    center: { opacity: 1, x: 0, transition: { duration: 1.1, ease: "easeOut" } },
+    exit: { opacity: 0, x: 24, transition: { duration: 0.8, ease: "easeIn" } },
 };
 
 export default function HappyClients() {
@@ -60,7 +60,7 @@ export default function HappyClients() {
                     viewport={{ once: true, amount: 0.5 }}
                     className="text-[#0f6f70] font-extrabold tracking-tight text-[24px] sm:text-[42px] md:text-[54px] leading-[1.05]"
                 >
-                    Our Happy Clients
+                    Client Success Stories
                 </motion.h2>
 
                 <motion.p
@@ -71,8 +71,8 @@ export default function HappyClients() {
                     transition={{ delay: 0.05 }}
                     className="mt-4 max-w-3xl text-[16px] sm:text-[17px] leading-7 text-[#1D2939]"
                 >
-                    Discover why they choose us as their trusted partner and hear firsthand about
-                    the exceptional service and results we deliver.
+                    Experience the impact of our work through the voices of those who have transformed
+                    their businesses with our innovative digital solutions and dedicated partnership.
                 </motion.p>
 
                 {/* Robot (mobile: above panel) */}

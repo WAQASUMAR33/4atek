@@ -3,12 +3,18 @@ export const runtime = "nodejs";
 
 import { NextResponse } from "next/server";
 
-// 🔒 hard-coded credentials
-const USER = "admin";
-const PASS = "786@786";
+// 🔒 credentials from environment variables
+const USER = process.env.ADMIN_USER || process.env.ADMIN_USERNAME;
+const PASS = process.env.ADMIN_PASS || process.env.ADMIN_PASSWORD;
 
 export async function POST(req) {
     try {
+        // Debug: Check if environment variables are loaded
+        if (!USER || !PASS) {
+            console.error("Admin credentials not configured in environment variables");
+            return NextResponse.json({ ok: false, error: "Server configuration error" }, { status: 500 });
+        }
+
         const { username, password } = await req.json();
 
         if (username === USER && password === PASS) {

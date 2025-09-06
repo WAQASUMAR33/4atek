@@ -28,18 +28,18 @@ export default function CostHero() {
                     >
                         <h1 className="font-extrabold tracking-tight uppercase leading-[1.06]">
                             <span className="block text-[#19d3c5] text-[20px] sm:text-[30px] md:text-[35px]">
-                                What does quality tech cost?
+                                Ready to invest in excellence?
                             </span>
                             <span className="block text-white text-[20px] sm:text-[30px] md:text-[35px]">
-                                Find out with 4A Tek!
+                                Let 4A Tek show you how!
                             </span>
                         </h1>
 
                         <p className="mt-4 max-w-2xl text-white/85 text-[14px] sm:text-[15px] leading-7">
-                            Are you wondering about the cost of top-notch tech solutions like web development,
-                            mobile apps, and e-commerce? Look no further than 4A Tek! We provide transparent
-                            pricing for tailored services, including cybersecurity. Explore our budget-friendly
-                            options and kickstart your digital journey today!
+                            Transform your business with premium digital solutions that deliver exceptional value.
+                            At 4A Tek, we believe in transparent pricing and customized approaches that fit your
+                            budget and goals. From cutting-edge web development to robust mobile applications,
+                            discover how quality technology can accelerate your success without breaking the bank.
                         </p>
 
                         <div className="mt-6">
@@ -53,7 +53,7 @@ export default function CostHero() {
                   hover:bg-[#19d3c5]/10 transition
                 "
                             >
-                                Get quote now!
+                                Start Your Project
                             </a>
                         </div>
                     </motion.div>

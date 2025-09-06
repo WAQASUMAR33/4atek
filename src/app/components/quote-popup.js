@@ -5,10 +5,10 @@ import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { Mail, Phone, X } from "lucide-react";
 
-const OVERLAY_FADE = { hidden: { opacity: 0 }, show: { opacity: 1 } };
+const OVERLAY_FADE = { hidden: { opacity: 0 }, show: { opacity: 1, transition: { duration: 0.6 } } };
 const MODAL_POP = {
     hidden: { opacity: 0, y: 20, scale: 0.98 },
-    show: { opacity: 1, y: 0, scale: 1, transition: { duration: 0.35, ease: "easeOut" } },
+    show: { opacity: 1, y: 0, scale: 1, transition: { duration: 0.7, ease: "easeOut" } },
 };
 
 export default function QuotePopup() {

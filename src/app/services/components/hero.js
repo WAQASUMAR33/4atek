@@ -20,7 +20,7 @@ export default function ServicesHero({
                 <div className="relative h-[56svh] min-h-[420px] md:h-[64svh] lg:h-[72svh]">
                     {/* Background image */}
                     <Image
-                        src="/assets/services-page/hero.png"
+                        src="/assets/services-hero.png"
                         alt="Background for Services"
                         fill
                         priority

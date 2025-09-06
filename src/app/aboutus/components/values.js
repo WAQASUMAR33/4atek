@@ -5,17 +5,17 @@ import { motion } from "framer-motion";
 
 const fadeUp = {
     hidden: { opacity: 0, y: 18 },
-    show: { opacity: 1, y: 0, transition: { duration: 0.55, ease: "easeOut" } },
+    show: { opacity: 1, y: 0, transition: { duration: 1.2, ease: "easeOut" } },
 };
 
 const fadeRight = {
     hidden: { opacity: 0, x: 35 },
-    show: { opacity: 1, x: 0, transition: { duration: 0.55, ease: "easeOut" } },
+    show: { opacity: 1, x: 0, transition: { duration: 1.2, ease: "easeOut" } },
 };
 
 const fadeLeft = {
     hidden: { opacity: 0, x: -35 },
-    show: { opacity: 1, x: 0, transition: { duration: 0.55, ease: "easeOut" } },
+    show: { opacity: 1, x: 0, transition: { duration: 1.2, ease: "easeOut" } },
 };
 
 export default function ApproachAndValues() {
@@ -33,18 +33,17 @@ export default function ApproachAndValues() {
                         className="lg:col-span-6"
                     >
                         <h2 className="text-[#0f6f70] font-extrabold leading-[1.05] text-3xl sm:text-4xl">
-                            Our Approach:
+                            How We Work:
                         </h2>
                         <h3 className="mt-3 text-xl sm:text-2xl font-bold text-[#0f6f70]/90">
-                            A Collaborative Journey
+                            Partnership-Driven Excellence
                         </h3>
 
                         <p className="mt-4 text-[15px] sm:text-[16px] leading-7 text-[#1D2939]">
-                            At 4A Tek, our approach is rooted in collaboration, communication, and
-                            transparency. We start by understanding your business objectives and work
-                            with you every step of the way to achieve them. From initial brainstorming
-                            sessions to the final launch, we ensure your vision is at the forefront,
-                            making the journey as rewarding as the destination.
+                            At 4A Tek, we believe that exceptional results come from deep collaboration
+                            and strategic thinking. Our proven methodology combines cutting-edge technology
+                            with personalized attention to detail, ensuring every project delivers
+                            measurable impact and exceeds expectations from concept to completion.
                         </p>
                     </motion.div>
 
@@ -99,18 +98,18 @@ export default function ApproachAndValues() {
                         className="lg:col-span-6 order-2 lg:order-none"
                     >
                         <h2 className="text-[#0f6f70] font-extrabold leading-[1.05] text-3xl sm:text-4xl">
-                            Our Values:
+                            What Drives Us:
                         </h2>
                         <h3 className="mt-3 text-xl sm:text-2xl font-bold text-[#0f6f70]/90">
-                            Guiding Principles of 4A Tek
+                            Excellence Through Innovation
                         </h3>
 
                         <p className="mt-4 text-[15px] sm:text-[16px] leading-7 text-[#1D2939]">
-                            Integrity, innovation, and customer-centricity are the core values that drive
-                            4A Tek. We conduct business with honesty and ethics, always putting our
-                            clients’ needs first. We strive to push the boundaries of digital innovation
-                            while maintaining a steadfast focus on delivering exceptional customer
-                            experiences.
+                            At 4A Tek, our commitment to excellence is unwavering. We combine technical
+                            expertise with creative vision to deliver solutions that not only meet
+                            current needs but anticipate future challenges. Our dedication to quality,
+                            innovation, and client success drives everything we do, creating lasting
+                            partnerships built on trust and exceptional results.
                         </p>
                     </motion.div>
                 </div>

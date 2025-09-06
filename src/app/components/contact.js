@@ -76,15 +76,17 @@ export default function ContactOverlay() {
                             className="max-w-3xl text-white"
                         >
                             <h2 className="text-[24px] font-extrabold tracking-tight leading-snug">
-                                Fueling Startup Dreams with 4A Tek
+                                Ready to Transform Your Business with 4A Tek?
                             </h2>
                             <p className="mt-3 text-[14px] leading-6 text-white/90">
-                                Embarking on a startup journey? 4A Tek is your trusted ally, equipped with the expertise to
-                                transform your ideas into thriving ventures—from bespoke MVPs to funding guidance.
+                                Take your business to the next level with 4A Tek's comprehensive digital solutions.
+                                We specialize in creating innovative web applications, mobile apps, and strategic
+                                technology consulting that drives real results and measurable growth.
                             </p>
                             <p className="mt-3 text-[14px] leading-6 text-white/90">
-                                With a deep understanding of startup challenges, we offer tailored solutions that maximize value
-                                without breaking the bank. Let’s turn your vision into reality!
+                                Our expert team combines cutting-edge technology with strategic thinking to deliver
+                                solutions that not only meet your current needs but scale with your future ambitions.
+                                Partner with us and experience the difference that true expertise makes.
                             </p>
 
                             <div className="mt-5">
@@ -92,7 +94,7 @@ export default function ContactOverlay() {
                                     href="#contact"
                                     className="inline-flex items-center rounded-full bg-[#19d3c5] px-5 py-2.5 text-[14px] font-semibold text-[#063c3c] shadow hover:brightness-105 active:brightness-95 transition"
                                 >
-                                    Book Free Consultation Now!
+                                    Get Started Today!
                                 </a>
                             </div>
                         </motion.div>

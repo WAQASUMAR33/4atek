@@ -5,12 +5,12 @@ import { motion } from "framer-motion";
 
 const fadeUp = {
     hidden: { opacity: 0, y: 22 },
-    show: { opacity: 1, y: 0, transition: { duration: 0.55, ease: "easeOut" } },
+    show: { opacity: 1, y: 0, transition: { duration: 0.9, ease: "easeOut" } },
 };
 
 const fadeInRight = {
     hidden: { opacity: 0, x: 40 },
-    show: { opacity: 1, x: 0, transition: { duration: 0.6, ease: "easeOut", delay: 0.05 } },
+    show: { opacity: 1, x: 0, transition: { duration: 1.0, ease: "easeOut", delay: 0.1 } },
 };
 
 export default function Unlock() {
@@ -59,21 +59,22 @@ export default function Unlock() {
                 sm:text-[28px] md:text-[30px] lg:text-[40px]
               "
                         >
-                            Unlock Your Business Potential
+                            Elevate Your Digital Presence
                         </h2>
 
                         <p className="mt-6 max-w-3xl text-[15px] leading-8 text-[#1D2939]">
-                            At 4A Tek, understand the unique challenges that startups face on their journey
-                            to success. That’s why we’re here to provide tailored support and innovative
-                            solutions to help startups thrive in today’s competitive landscape.
+                            At 4A Tek, we specialize in creating digital experiences that captivate audiences
+                            and drive meaningful engagement. Our comprehensive approach combines strategic
+                            thinking with cutting-edge technology to deliver solutions that make a lasting
+                            impact on your business growth.
                         </p>
 
                         <p className="mt-5 max-w-3xl text-[15px] leading-8 text-[#1D2939]">
-                            With over 10 years of experience in building minimum viable products (MVPs) and
-                            collaborating with startups, our team brings a wealth of knowledge and expertise to
-                            the table. We’ve worked with startups across various industries, helping them
-                            transform their ideas into reality and navigate the complexities of launching a new
-                            venture.
+                            Our multidisciplinary team of designers, developers, and strategists work
+                            collaboratively to bring your vision to life. From initial concept to final
+                            deployment, we ensure every detail is crafted with precision and purpose.
+                            Whether you're launching a new product or enhancing an existing platform,
+                            we provide the expertise and support you need to succeed in the digital realm.
                         </p>
                     </motion.div>
                 </div>

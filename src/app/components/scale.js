@@ -37,7 +37,7 @@ function CountUp({ to = 100, duration = 1500, start = false }) {
 /* -------------- Animations ---------------- */
 const fadeUp = {
     hidden: { opacity: 0, y: 18 },
-    show: { opacity: 1, y: 0, transition: { duration: 0.55, ease: "easeOut" } },
+    show: { opacity: 1, y: 0, transition: { duration: 1.2, ease: "easeOut" } },
 };
 
 /* -------------- Component ----------------- */
@@ -46,10 +46,10 @@ export default function ScaleWithTeams() {
     const inView = useInView(statsRef, { amount: 0.35, once: true });
 
     const STATS = [
-        { label: "Projects Completed", value: 1000, suffix: "+" },
-        { label: "In-house engineers", value: 300, suffix: "+" },
-        { label: "Industries Served", value: 20, suffix: "+" },
-        { label: "Years of Experience", value: 6, suffix: "+" },
+        { label: "Projects Completed", value: 100, suffix: "+" },
+        { label: "Satification Rate", value:99, suffix: "%" },
+        { label: "Happy Clients", value: 100, suffix: "+" },
+        { label: "Years of Experience", value: 4, suffix: "+" },
     ];
 
     return (
@@ -86,20 +86,21 @@ export default function ScaleWithTeams() {
                                     className="font-extrabold leading-[1.05] text-[#19d3c5]
                              text-3xl sm:text-4xl lg:text-[45px]"
                                 >
-                                    In Pursuit Of Scaling The Digital Ecosystem 
+                                    Building Tomorrow's Digital Solutions Today 
                                 </h2>
 
                                 <p className="mt-6 max-w-2xl text-white/90 text-[15px] sm:text-[16px] leading-7">
-                                    4A Tek came into existence after two tech enthusiasts from
-                                    different backgrounds joined forces to create something bound
-                                    to become a difference-maker in the digital world.
+                                    At 4A Tek, we believe in the power of innovation to transform businesses
+                                    and create meaningful connections in the digital landscape. Our passion
+                                    for technology drives us to deliver exceptional solutions that make
+                                    a real difference.
                                 </p>
                                 <p className="mt-4 max-w-3xl text-white/90 text-[15px] sm:text-[16px] leading-7">
-                                    The company started in 2018 as a mobile app development
-                                    company but has since grown into a full-stack digital
-                                    transformation organization offering enterprise software
-                                    development and technical consultancy services for businesses
-                                    worldwide.
+                                    Since our founding, we have evolved into a comprehensive digital
+                                    solutions provider, specializing in custom software development,
+                                    mobile applications, and strategic technology consulting. Our
+                                    expertise spans across industries, helping businesses worldwide
+                                    achieve their digital transformation goals.
                                 </p>
                             </motion.div>
 
@@ -119,7 +120,7 @@ export default function ScaleWithTeams() {
                                         <div key={s.label} className="text-left">
                                             <div className="text-[#19d3c5] font-extrabold leading-none
                                     text-3xl sm:text-4xl lg:text-4xl">
-                                                <CountUp to={s.value} duration={1400} start={inView} />
+                                                <CountUp to={s.value} duration={2000} start={inView} />
                                                 {s.suffix}
                                             </div>
                                             <div className="mt-2 text-white/85 text-sm sm:text-[15px]">

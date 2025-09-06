@@ -15,43 +15,43 @@ export default function Hero() {
     // Animation variants (subtle, cubic-bezier, with stagger)
     const ease = [0.22, 1, 0.36, 1];
 
-    // ⬇️ faster stagger
+    // ⬇️ slower stagger for better user experience
     const wrapVariants = {
         hidden: { opacity: 0 },
         visible: {
             opacity: 1,
-            transition: { staggerChildren: 0.05, when: "beforeChildren" }, // was 0.08
+            transition: { staggerChildren: 0.3, when: "beforeChildren" }, // increased from 0.2 for even slower welcome
         },
     };
 
-    // ⬇️ faster left column entrance
+    // ⬇️ slower left column entrance for better user experience
     const leftVariants = {
         hidden: { opacity: 0, x: prefersReduced ? 0 : -16 },
         visible: {
             opacity: 1,
             x: 0,
-            transition: { duration: 0.4, ease }, // was 0.55
+            transition: { duration: 1.6, ease }, // increased from 1.2 for even slower welcome
         },
     };
 
-    // ⬇️ faster underline line grow
+    // ⬇️ slower underline line grow for better user experience
     const lineVariants = {
         hidden: { scaleX: 0, opacity: 0 },
         visible: {
             scaleX: 1,
             opacity: 1,
-            transition: { duration: 0.35, ease, delay: 0.03, transformOrigin: "left" }, // was 0.5, 0.05
+            transition: { duration: 1.4, ease, delay: 0.25, transformOrigin: "left" }, // increased from 1.0, 0.15 for even slower welcome
         },
     };
 
-    // ⬇️ faster image entrance
+    // ⬇️ slower image entrance for better user experience
     const imgVariants = {
         hidden: { opacity: 0, y: prefersReduced ? 0 : 14, scale: 0.995 },
         visible: {
             opacity: 1,
             y: 0,
             scale: 1,
-            transition: { duration: 0.45, ease, delay: 0.03 }, // was 0.6, 0.05
+            transition: { duration: 1.8, ease, delay: 0.25 }, // increased from 1.4, 0.15 for even slower welcome
         },
     };
 
@@ -85,14 +85,14 @@ export default function Hero() {
                         opacity: { value: 0.28 },
                         size: { value: { min: 1, max: 3 } },
                         links: { enable: true, distance: 140, opacity: 0.2, width: 1, color: "#ffffff" },
-                        move: { enable: true, speed: 0.5, direction: "none", outModes: { default: "bounce" } },
+                        move: { enable: true, speed: 2.0, direction: "none", outModes: { default: "bounce" } },
                     },
                     interactivity: { events: { onHover: { enable: false }, onClick: { enable: false }, resize: true } },
                 }}
             />
 
             {/* Uniform dark backdrop */}
-            <div className="pointer-events-none absolute inset-0 -z-40 bg-[#0b2230]/95" />
+            <div className="pointer-events-none absolute inset-0 -z-40 bg-[#005F61]/95" />
 
             {/* Content */}
             <motion.div

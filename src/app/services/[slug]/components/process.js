@@ -159,7 +159,7 @@ function ProcessSection({
     // Animations
     const container = {
         hidden: { opacity: 0, y: 16 },
-        visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } },
+        visible: { opacity: 1, y: 0, transition: { duration: 0.9, ease: "easeOut" } },
     };
 
     const item = {
@@ -168,7 +168,7 @@ function ProcessSection({
             opacity: 1,
             y: 0,
             scale: 1,
-            transition: { delay: 0.08 + i * 0.06, duration: 0.45, ease: "easeOut" },
+            transition: { delay: 0.15 + i * 0.12, duration: 0.8, ease: "easeOut" },
         }),
     };
 

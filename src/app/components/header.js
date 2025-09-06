@@ -86,12 +86,12 @@ export default function Header() {
                 <div className="flex h-[68px] items-center justify-between">
                     {/* Logo */}
                     <Link href="/home" className="flex items-center" aria-label="A4Tech — Home">
-                        <div className="relative h-9 w-[170px] md:w-[190px]">
+                        <div className="relative h-14 w-[220px] md:w-[240px]">
                             <Image
                                 src="/assets/logo.png"
                                 alt="4A Tek"
                                 fill
-                                sizes="(max-width: 768px) 170px, 190px"
+                                sizes="(max-width: 768px) 220px, 240px"
                                 className="object-contain"
                                 priority
                             />

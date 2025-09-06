@@ -10,12 +10,12 @@ import { ChevronRight, BarChart3 } from "lucide-react";
 
 const gridStagger = {
     hidden: {},
-    show: { transition: { staggerChildren: 0.08, delayChildren: 0.12 } },
+    show: { transition: { staggerChildren: 0.15, delayChildren: 0.2 } },
 };
 
 const cardMotion = {
     hidden: { opacity: 0, y: 28, scale: 0.98 },
-    show: { opacity: 1, y: 0, scale: 1, transition: { duration: 0.55, ease: "easeOut" } },
+    show: { opacity: 1, y: 0, scale: 1, transition: { duration: 0.9, ease: "easeOut" } },
 };
 
 // get heading part of "Heading: description" (also supports — | - )
@@ -89,7 +89,7 @@ export default function ServicesSection({ title = "Our Services" }) {
                     initial={{ opacity: 0, y: 12 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true, amount: 0.5 }}
-                    transition={{ duration: 0.5, ease: "easeOut" }}
+                    transition={{ duration: 0.9, ease: "easeOut" }}
                     className="text-center text-3xl sm:text-4xl font-extrabold tracking-tight text-[#0f6f70] mb-8 sm:mb-10"
                 >
                     {title}

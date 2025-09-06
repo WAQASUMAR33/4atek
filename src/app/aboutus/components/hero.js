@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 
 const fadeUp = {
     hidden: { opacity: 0, y: 18 },
-    show: { opacity: 1, y: 0, transition: { duration: 0.55, ease: "easeOut" } },
+    show: { opacity: 1, y: 0, transition: { duration: 0.9, ease: "easeOut" } },
 };
 
 export default function AboutHero({
@@ -45,8 +45,8 @@ export default function AboutHero({
                   text-3xl sm:text-5xl lg:text-[50px]
                 "
                             >
-                                <span className="block">Listening to Your Goals,</span>
-                                <span className="block">Crafting Solutions</span>
+                                <span className="block">Innovation Meets</span>
+                                <span className="block">Excellence at 4A Tek</span>
                             </motion.h1>
 
                             <motion.p
@@ -54,13 +54,13 @@ export default function AboutHero({
                                 initial="hidden"
                                 whileInView="show"
                                 viewport={{ once: true, amount: 0.5 }}
-                                transition={{ delay: 0.08 }}
+                                transition={{ delay: 0.15 }}
                                 className="mt-6 max-w-2xl text-white/90 text-[15px] sm:text-[16px] leading-7"
                             >
-                                At 4A Tek, we specialize in delivering innovative digital services.
-                                Based in the USA, our expertise spans UI/UX design, software and
-                                mobile app development, &amp; comprehensive website and
-                                e-commerce solutions.
+                                At 4A Tek, we are passionate about transforming ideas into powerful digital
+                                experiences. Our team of skilled professionals combines creativity with cutting-edge
+                                technology to deliver solutions that drive real business results and exceed
+                                expectations across every project.
                             </motion.p>
 
                             <motion.div
@@ -68,7 +68,7 @@ export default function AboutHero({
                                 initial="hidden"
                                 whileInView="show"
                                 viewport={{ once: true, amount: 0.5 }}
-                                transition={{ delay: 0.16 }}
+                                transition={{ delay: 0.3 }}
                                 className="mt-8"
                             >
                                 <a
@@ -77,7 +77,7 @@ export default function AboutHero({
                              text-[#063c3c] text-[14px] font-semibold shadow
                              hover:brightness-105 active:brightness-95 transition"
                                 >
-                                    Get Started
+                                    Discover Our Story
                                 </a>
                             </motion.div>
                         </div>

@@ -100,7 +100,7 @@ export default function SiteFooter() {
 
             {/* Floating WhatsApp Icon */}
             <a
-                href="https://wa.me/13368486076"
+                href="https://wa.me/18328618727"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="fixed bottom-4 right-4 z-50"

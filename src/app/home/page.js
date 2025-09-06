@@ -10,6 +10,7 @@ import Customer from "../components/happyclients"
 import Accelerate from "./components/Accelerate"
 import Cost from "./components/costhero"
 import WhyChoose from "./components/whychoose"
+import Industries from "./components/industries"
 import Contact from "../components/contact"
 import Scale from "../components/scale"
 import Footer from "../components/footer"
@@ -34,6 +35,7 @@ export default function Root() {
             <Accelerate />
             <Cost />
             <WhyChoose />
+            <Industries />
             <Contact />
             <Footer />
 
