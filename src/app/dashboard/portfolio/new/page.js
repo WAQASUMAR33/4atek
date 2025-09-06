@@ -8,9 +8,10 @@ import StarterKit from "@tiptap/starter-kit";
 import LinkExt from "@tiptap/extension-link";
 import ImageExt from "@tiptap/extension-image";
 import Underline from "@tiptap/extension-underline";
-import TextStyle from "@tiptap/extension-text-style";
+import { TextStyle } from "@tiptap/extension-text-style";
 import Color from "@tiptap/extension-color";
 import { uploadImageFile } from "@/app/lib/upload"; // ← NEW
+import Image from "next/image";
 
 // Icons
 import {
@@ -271,7 +272,16 @@ export default function NewPortfolio() {
                         </div>
                         {!!cover && (
                             <div className="mt-3 overflow-hidden rounded-md border">
-                                <image src={cover} alt="Cover preview" className="max-h-48 w-full object-cover" />
+                                <div className="relative w-full aspect-[16/9]">
+                                    <Image
+                                        src={cover}
+                                        alt="Cover preview"
+                                        fill
+                                        sizes="(max-width: 1024px) 100vw, 320px"
+                                        className="object-cover"
+                                        priority={false}
+                                    />
+                                </div>
                             </div>
                         )}
                     </div>

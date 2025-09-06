@@ -8,7 +8,7 @@ import StarterKit from "@tiptap/starter-kit";
 import LinkExt from "@tiptap/extension-link";
 import ImageExt from "@tiptap/extension-image";
 import Underline from "@tiptap/extension-underline";
-import TextStyle from "@tiptap/extension-text-style";
+import { TextStyle } from "@tiptap/extension-text-style";
 import Color from "@tiptap/extension-color";
 import { uploadImageFile } from "@/app/lib/upload"; // ← NEW
 import Image from "next/image";
