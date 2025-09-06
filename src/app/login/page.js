@@ -1,16 +1,27 @@
 // src/app/login/page.js
 "use client";
 
-import { useState } from "react";
-import { useRouter, useSearchParams } from "next/navigation";
+import { useState, useEffect } from "react";
+import { useRouter } from "next/navigation";
 
 export default function LoginPage() {
     const router = useRouter();
-    const next = useSearchParams().get("next") || "/dashboard/portfolio";
+    const [next, setNext] = useState("/dashboard/portfolio");
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
     const [err, setErr] = useState("");
     const [loading, setLoading] = useState(false);
+
+    useEffect(() => {
+        // Get the next parameter from URL on client side only
+        if (typeof window !== "undefined") {
+            const urlParams = new URLSearchParams(window.location.search);
+            const nextParam = urlParams.get("next");
+            if (nextParam) {
+                setNext(nextParam);
+            }
+        }
+    }, []);
 
     async function submit(e) {
         e.preventDefault();
