@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
-import { Mail, Phone, X } from "lucide-react";
+import { Mail, Phone, X, Loader2 } from "lucide-react";
 
 const OVERLAY_FADE = { hidden: { opacity: 0 }, show: { opacity: 1, transition: { duration: 0.6 } } };
 const MODAL_POP = {
@@ -16,6 +16,7 @@ export default function QuotePopup() {
     const [timeReady, setTimeReady] = useState(false);
     const [scrollReady, setScrollReady] = useState(false);
     const [status, setStatus] = useState({ type: "", msg: "" });
+    const [loading, setLoading] = useState(false);
     const hasShownRef = useRef(false);
 
     // show once per session
@@ -57,12 +58,15 @@ export default function QuotePopup() {
     // Submit w/ honeypot
     async function onSubmit(e) {
         e.preventDefault();
+        const formElement = e.currentTarget;
         setStatus({ type: "", msg: "" });
+        setLoading(true);
 
-        const data = Object.fromEntries(new FormData(e.currentTarget));
+        const data = Object.fromEntries(new FormData(formElement));
         if (data.website) {
             // bot caught
             setStatus({ type: "ok", msg: "Thanks! We'll be in touch." });
+            setLoading(false);
             close();
             return;
         }
@@ -77,13 +81,15 @@ export default function QuotePopup() {
             if (res.ok) {
                 setStatus({ type: "ok", msg: "Thanks! We'll be in touch shortly." });
                 setTimeout(close, 1200);
-                e.currentTarget.reset();
+                formElement.reset();
             } else {
                 const { error } = await res.json().catch(() => ({ error: "Something went wrong." }));
                 setStatus({ type: "error", msg: error || "Something went wrong." });
             }
         } catch (err) {
             setStatus({ type: "error", msg: "Network error. Please try again." });
+        } finally {
+            setLoading(false);
         }
     }
 
@@ -153,6 +159,11 @@ export default function QuotePopup() {
                                         tabIndex={-1}
                                         className="hidden"
                                     />
+                                    <input
+                                        type="hidden"
+                                        name="subject"
+                                        value="Request a Quote"
+                                    />
 
                                     <input
                                         name="name"
@@ -179,11 +190,19 @@ export default function QuotePopup() {
 
                                     <button
                                         type="submit"
+                                        disabled={loading}
                                         className="mt-1 inline-flex h-11 w-full items-center justify-center rounded-md
                                bg-[#19d3c5] text-[#063c3c] text-[14px] font-semibold
-                               hover:brightness-105 active:brightness-95 transition"
+                               hover:brightness-105 active:brightness-95 transition disabled:opacity-70 disabled:cursor-not-allowed"
                                     >
-                                        SUBMIT REQUEST
+                                        {loading ? (
+                                            <>
+                                                <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                                                SUBMITTING...
+                                            </>
+                                        ) : (
+                                            "SUBMIT REQUEST"
+                                        )}
                                     </button>
 
                                     {status.msg && (

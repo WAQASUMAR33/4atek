@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Phone, Mail, MapPin } from "lucide-react";
+import { Phone, Mail, MapPin, Loader2 } from "lucide-react";
 import { PK, US } from "country-flag-icons/react/3x2"; // 🇵🇰 🇺🇸 flags
 
 const fadeUp = {
@@ -18,24 +18,33 @@ const fadeInRight = {
 
 export default function ContactOverlay() {
     const [status, setStatus] = useState({ type: "", msg: "" });
+    const [loading, setLoading] = useState(false);
 
     async function onSubmit(e) {
         e.preventDefault();
+        const formElement = e.currentTarget;
         setStatus({ type: "", msg: "" });
+        setLoading(true);
 
-        const data = Object.fromEntries(new FormData(e.currentTarget));
-        const res = await fetch("/api/contact", {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify(data),
-        });
+        const data = Object.fromEntries(new FormData(formElement));
+        try {
+            const res = await fetch("/api/contact", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(data),
+            });
 
-        if (res.ok) {
-            setStatus({ type: "ok", msg: "Thanks! We’ll get back to you shortly." });
-            e.currentTarget.reset();
-        } else {
-            const { error } = await res.json().catch(() => ({ error: "Something went wrong." }));
-            setStatus({ type: "error", msg: error || "Something went wrong." });
+            if (res.ok) {
+                setStatus({ type: "ok", msg: "Thanks! We’ll get back to you shortly." });
+                formElement.reset();
+            } else {
+                const { error } = await res.json().catch(() => ({ error: "Something went wrong." }));
+                setStatus({ type: "error", msg: error || "Something went wrong." });
+            }
+        } catch (err) {
+            setStatus({ type: "error", msg: "Network error. Please try again." });
+        } finally {
+            setLoading(false);
         }
     }
 
@@ -240,9 +249,17 @@ export default function ContactOverlay() {
                                     <div className="col-span-1 sm:col-span-2">
                                         <button
                                             type="submit"
-                                            className="inline-flex h-11 items-center justify-center rounded-md px-5 text-[14px] font-semibold text-white bg-black hover:bg-black/90"
+                                            disabled={loading}
+                                            className="inline-flex h-11 items-center justify-center rounded-md px-5 text-[14px] font-semibold text-white bg-black hover:bg-black/90 disabled:opacity-70 disabled:cursor-not-allowed"
                                         >
-                                            Submit Now
+                                            {loading ? (
+                                                <>
+                                                    <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                                                    Submitting...
+                                                </>
+                                            ) : (
+                                                "Submit Now"
+                                            )}
                                         </button>
                                     </div>
 

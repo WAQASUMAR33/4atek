@@ -9,6 +9,7 @@ import {
     Clock,
     Building2,
     Send,
+    Loader2,
 } from "lucide-react";
 
 /* ----- Animations ----- */
@@ -23,37 +24,44 @@ const stagger = {
 
 export default function ContactPageForm() {
     const [status, setStatus] = useState({ type: "", msg: "" });
+    const [loading, setLoading] = useState(false);
 
     async function onSubmit(e) {
         e.preventDefault();
+        const formElement = e.currentTarget;
         setStatus({ type: "", msg: "" });
+        setLoading(true);
 
-        const form = new FormData(e.currentTarget);
+        const form = new FormData(formElement);
         // Honeypot (bots fill this):
         if (form.get("website")?.toString().trim()) {
             setStatus({
                 type: "error",
                 msg: "Something went wrong. Please try again.",
             });
+            setLoading(false);
             return;
         }
 
         const payload = Object.fromEntries(form);
         try {
-            // Wire this to your API if available:
-            // const res = await fetch("/api/contact", {
-            //   method: "POST",
-            //   headers: { "Content-Type": "application/json" },
-            //   body: JSON.stringify(payload),
-            // });
-            // if (!res.ok) throw new Error();
+            const res = await fetch("/api/contact", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(payload),
+            });
 
-            // Simulate success for now:
-            await new Promise((r) => setTimeout(r, 500));
+            if (!res.ok) {
+                const { error } = await res.json().catch(() => ({ error: "Could not send. Please try again." }));
+                throw new Error(error || "Could not send. Please try again.");
+            }
+
             setStatus({ type: "ok", msg: "Thanks! We’ll be in touch shortly." });
-            e.currentTarget.reset();
-        } catch {
-            setStatus({ type: "error", msg: "Could not send. Please try again." });
+            formElement.reset();
+        } catch (err) {
+            setStatus({ type: "error", msg: err.message || "Could not send. Please try again." });
+        } finally {
+            setLoading(false);
         }
     }
 
@@ -191,10 +199,20 @@ export default function ContactPageForm() {
                             <div className="md:col-span-2 mt-2 flex items-center gap-4">
                                 <button
                                     type="submit"
-                                    className="inline-flex items-center gap-2 rounded-md bg-[#0f6f70] px-5 py-2.5 text-[14px] font-semibold text-white shadow-sm hover:bg-[#0d5c5d] focus:outline-none focus:ring-2 focus:ring-[#19d3c5] focus:ring-offset-2"
+                                    disabled={loading}
+                                    className="inline-flex items-center gap-2 rounded-md bg-[#0f6f70] px-5 py-2.5 text-[14px] font-semibold text-white shadow-sm hover:bg-[#0d5c5d] focus:outline-none focus:ring-2 focus:ring-[#19d3c5] focus:ring-offset-2 disabled:opacity-70 disabled:cursor-not-allowed"
                                 >
-                                    <Send className="h-4 w-4" />
-                                    Send Message
+                                    {loading ? (
+                                        <>
+                                            <Loader2 className="h-4 w-4 animate-spin" />
+                                            Sending...
+                                        </>
+                                    ) : (
+                                        <>
+                                            <Send className="h-4 w-4" />
+                                            Send Message
+                                        </>
+                                    )}
                                 </button>
                                 <p
                                     className={`text-[14px] ${status.type === "ok"

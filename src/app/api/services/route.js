@@ -30,8 +30,8 @@ export async function GET(req) {
         const where = search
             ? {
                 OR: [
-                    { title: { contains: search, mode: "insensitive" } },
-                    { subtitle: { contains: search, mode: "insensitive" } },
+                    { title: { contains: search } },
+                    { subtitle: { contains: search } },
                 ],
             }
             : undefined;

@@ -38,12 +38,12 @@ export const metadata = {
     title: "4A Tek - Digital Solutions & Technology Services",
     description: "Transform your business with 4A Tek's innovative digital solutions. Specializing in web development, mobile apps, AI solutions, and technology consulting.",
   },
-  themeColor: "#0f6f70",
 };
 
 export const viewport = {
   width: "device-width",
   initialScale: 1,
+  themeColor: "#0f6f70",
 };
 
 export default function RootLayout({ children }) {
