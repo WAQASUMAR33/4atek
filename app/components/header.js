@@ -72,7 +72,7 @@ export default function Header() {
 
     // ✅ Inserted Partners between Portfolio and Contact Us
     const navItems = [
-        { label: "HOME", href: "/home" },
+        { label: "HOME", href: "/" },
         { label: "ABOUT US", href: "/aboutus" },
         { label: "PORTFOLIO", href: "/portfolio" },
         { label: "PARTNERS", href: "/partners" }, // <-- NEW
@@ -85,7 +85,7 @@ export default function Header() {
             <div className="mx-auto w-full max-w-[1400px] px-4 sm:px-6 lg:px-8">
                 <div className="flex h-[68px] items-center justify-between">
                     {/* Logo */}
-                    <Link href="/home" className="flex items-center" aria-label="A4Tech — Home">
+                    <Link href="/" className="flex items-center" aria-label="A4Tech — Home">
                         <div className="relative h-14 w-[220px] md:w-[240px]">
                             <Image
                                 src="/assets/logo.png"
