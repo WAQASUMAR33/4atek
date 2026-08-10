@@ -3,6 +3,7 @@
 import useSWR from "swr";
 import Link from "next/link";
 import Image from "next/image";
+import { getServiceImageUrl } from "@/app/lib/services";
 
 const fetcher = (url) => fetch(url).then((r) => r.json());
 
@@ -36,25 +37,25 @@ export default function ServicesListPage() {
             {error && <div className="text-red-600">Failed to load</div>}
 
             <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-                {(data?.items ?? []).map((s) => (
-                    <div key={s.id} className="rounded-xl border border-black/5 bg-white p-4 shadow-sm">
-                        <div className="text-xs text-gray-500">
-                            Updated {new Date(s.updatedAt).toLocaleString()}
-                        </div>
-                        <div className="mt-1 font-medium text-[#0f6f70]">{s.title}</div>
-                        <div className="text-xs text-gray-500 truncate">/{s.slug}</div>
+                {(data?.items ?? []).map((s) => {
+                    const imgSrc = getServiceImageUrl(s);
+                    return (
+                        <div key={s.id} className="rounded-xl border border-black/5 bg-white p-4 shadow-sm">
+                            <div className="text-xs text-gray-500">
+                                Updated {new Date(s.updatedAt).toLocaleString()}
+                            </div>
+                            <div className="mt-1 font-medium text-[#0f6f70]">{s.title}</div>
+                            <div className="text-xs text-gray-500 truncate">/{s.slug}</div>
 
-                        {s.coverImage && (
-                            <div className="relative mt-3 h-32 w-full overflow-hidden rounded">
+                            <div className="relative mt-3 h-32 w-full overflow-hidden rounded bg-gray-100">
                                 <Image
-                                    src={s.coverImage}
+                                    src={imgSrc}
                                     alt={s.title}
                                     fill
                                     className="object-cover"
                                     sizes="(max-width: 1024px) 100vw, 33vw"
                                 />
                             </div>
-                        )}
 
                         <div className="mt-4 flex items-center gap-2">
                             <Link
@@ -78,7 +79,8 @@ export default function ServicesListPage() {
                             </button>
                         </div>
                     </div>
-                ))}
+                );
+            })}
             </div>
         </div>
     );

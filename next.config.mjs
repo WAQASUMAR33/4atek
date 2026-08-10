@@ -6,7 +6,17 @@ const nextConfig = {
   // Image optimization
   images: { 
     unoptimized: true, // Set to false if you want to use Next.js image optimization
-    domains: ['a4tech.virgocrumbs.com'], // Add your image domains here
+    domains: ['fouratek.com', 'www.fouratek.com', 'a4tech.virgocrumbs.com'],
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: '**',
+      },
+      {
+        protocol: 'http',
+        hostname: '**',
+      },
+    ],
   },
   
   // Performance optimizations

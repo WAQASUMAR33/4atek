@@ -6,6 +6,8 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { ChevronRight, BarChart3 } from "lucide-react";
 
+import { getServiceImageUrl, getServiceFallbackImage } from "@/app/lib/services";
+
 /* ---------------- helpers ---------------- */
 
 const gridStagger = {
@@ -49,7 +51,8 @@ function toCard(svc) {
 
     return {
         title: svc.title,
-        img: svc.coverImage || svc.image1 || "/assets/services/placeholder.jpg",
+        slug: svc.slug,
+        img: getServiceImageUrl(svc),
         items: bullets.length ? bullets : ["Details coming soon…"],
         href: `/services/${svc.slug}`,
     };
@@ -117,7 +120,10 @@ export default function ServicesSection({ title = "Our Services" }) {
 
 /* --------------- card --------------- */
 
-function Card({ title, img, items, href }) {
+function Card({ title, slug, img, items, href }) {
+    const fallbackSrc = getServiceFallbackImage(slug, title);
+    const [imgSrc, setImgSrc] = useState(img || fallbackSrc);
+
     return (
         <motion.div variants={cardMotion} initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.35 }}>
             <motion.article
@@ -130,12 +136,17 @@ function Card({ title, img, items, href }) {
             >
                 {/* Background image */}
                 <Image
-                    src={img}
+                    src={imgSrc}
                     alt={title}
                     fill
                     className="object-cover object-center transition-transform duration-500 group-hover:scale-[1.06]"
                     sizes="(max-width: 1280px) 50vw, 25vw"
                     priority={false}
+                    onError={() => {
+                        if (imgSrc !== fallbackSrc) {
+                            setImgSrc(fallbackSrc);
+                        }
+                    }}
                 />
 
                 {/* Title row (visible until hover) */}

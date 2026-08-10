@@ -5,11 +5,11 @@ import { NextResponse } from "next/server";
 
 const REMOTE_UPLOAD_URL =
     process.env.IMAGE_UPLOAD_PHP_URL ||
-    "https://a4tech.virgocrumbs.com/upload_Image.php";
+    "https://fouratek.com/upload_Image.php";
 
 const PUBLIC_BASE =
     process.env.NEXT_PUBLIC_IMAGE_UPLOAD_BASE ||
-    "https://a4tech.virgocrumbs.com/uploads";
+    "https://fouratek.com/uploads";
 
 /* -------------------------- helpers -------------------------- */
 function stripDataUrl(s) {

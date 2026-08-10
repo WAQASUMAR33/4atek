@@ -48,9 +48,9 @@ export const viewport = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       {/* Poppins everywhere; mono variable preserved for code blocks if you use it */}
-      <body className={`${poppins.className} ${geistMono.variable} antialiased`}>
+      <body className={`${poppins.className} ${geistMono.variable} antialiased`} suppressHydrationWarning>
         {children}
       </body>
     </html>

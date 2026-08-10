@@ -92,7 +92,7 @@ export default function SiteFooter() {
                     {/* BOTTOM BAR */}
                     <div className="mt-10 flex flex-col items-center gap-2 text-white/70">
                         <p className="text-[13px] text-center">
-                            Copyright © {new Date().getFullYear()} – 4A Tek – All rights reserved
+                            Copyright © <span suppressHydrationWarning>{new Date().getFullYear()}</span> – 4A Tek – All rights reserved
                         </p>
                     </div>
                 </div>

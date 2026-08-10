@@ -14,6 +14,8 @@ import Testmonials from "../../components/happyclients";
 import Footer from "../../components/footer";
 import Process from "./components/process";
 
+import { getServiceImageUrl } from "@/app/lib/services";
+
 /* ---------- helpers ---------- */
 // Accepts "Heading: description", "Heading — description", or "Heading | description"
 function parseQA(str) {
@@ -80,7 +82,7 @@ export default async function ServiceDetail(props) {
         .map(parseQA)
         .filter(Boolean);
 
-    const rightImage = s.image1 || s.coverImage || null;
+    const rightImage = getServiceImageUrl({ ...s, slug });
 
     return (
         <>
