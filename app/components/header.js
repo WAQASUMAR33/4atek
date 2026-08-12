@@ -20,7 +20,8 @@ export default function Header() {
         (async () => {
             try {
                 const res = await fetch("/api/services?take=100", { cache: "no-store" });
-                const json = await res.json();
+                if (!res.ok) return;
+                const json = await res.json().catch(() => null);
                 const rows = Array.isArray(json?.items) ? json.items : Array.isArray(json) ? json : [];
                 if (!alive) return;
                 setServices(

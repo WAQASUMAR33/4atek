@@ -69,7 +69,8 @@ export default function ServicesSection({ title = "Our Services" }) {
         (async () => {
             try {
                 const res = await fetch("/api/services", { cache: "no-store" });
-                const json = await res.json();
+                if (!res.ok) return;
+                const json = await res.json().catch(() => null);
                 if (!alive) return;
                 const raw = Array.isArray(json?.items) ? json.items : Array.isArray(json) ? json : [];
                 const cards = raw.map(toCard);
