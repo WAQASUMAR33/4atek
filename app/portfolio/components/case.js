@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
@@ -45,8 +46,24 @@ export default function CardGrid({ items = [] }) {
     );
 }
 
+function formatPortfolioImage(raw) {
+    if (!raw || typeof raw !== "string") return "/assets/portfolio/placeholder.jpg";
+    let url = raw.trim();
+    if (!url) return "/assets/portfolio/placeholder.jpg";
+    if (url.includes("virgocrumbs.com")) {
+        const filename = url.split("/").pop();
+        const base = process.env.NEXT_PUBLIC_IMAGE_UPLOAD_BASE || "https://fouratek.com/uploads";
+        return `${base.replace(/\/+$/, "")}/${filename}`;
+    }
+    return url;
+}
+
 /* -------------------- Full clickable card -------------------- */
 function CaseCard({ slug, title, lead, img }) {
+    const fallbackSrc = "/assets/portfolio/placeholder.jpg";
+    const initialSrc = formatPortfolioImage(img);
+    const [imgSrc, setImgSrc] = useState(initialSrc);
+
     return (
         <motion.div
             variants={stagger}
@@ -67,14 +84,19 @@ function CaseCard({ slug, title, lead, img }) {
                      hover:shadow-lg focus-visible:ring-2 focus-visible:ring-[#0f6f70] transition"
                 >
                     {/* Image */}
-                    <div className="relative aspect-[16/9] w-full overflow-hidden">
+                    <div className="relative aspect-[16/9] w-full overflow-hidden bg-gray-100">
                         <Image
-                            src={img}
+                            src={imgSrc}
                             alt={title}
                             fill
                             className="object-cover object-center transition-transform duration-300 group-hover:scale-[1.02]"
                             sizes="(max-width: 1024px) 100vw, 50vw"
                             priority={false}
+                            onError={() => {
+                                if (imgSrc !== fallbackSrc) {
+                                    setImgSrc(fallbackSrc);
+                                }
+                            }}
                         />
                         {/* Teal edge gradient for brand feel */}
                         <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#0f6f70]/15 via-transparent to-transparent" />

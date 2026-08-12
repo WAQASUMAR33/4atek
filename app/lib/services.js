@@ -39,13 +39,12 @@ export function getServiceFallbackImage(slug = "", title = "") {
 /**
  * Checks if a given image URL is valid and not pointing to known broken/dead domains.
  */
+/**
+ * Checks if a given image URL is valid.
+ */
 export function isBrokenImageUrl(url) {
     if (!url || typeof url !== "string") return true;
-    const trimmed = url.trim();
-    if (!trimmed) return true;
-    // Check for dead domain
-    if (trimmed.includes("virgocrumbs.com")) return true;
-    return false;
+    return !url.trim();
 }
 
 /**
@@ -54,8 +53,14 @@ export function isBrokenImageUrl(url) {
 export function getServiceImageUrl(svc) {
     if (!svc) return DEFAULT_SERVICE_PLACEHOLDER;
 
-    const raw = svc.coverImage || svc.image1 || svc.img || "";
-    if (raw && !isBrokenImageUrl(raw)) {
+    let raw = (svc.coverImage || svc.image1 || svc.img || "").trim();
+    if (raw) {
+        // Rewrite old/dead virgocrumbs URLs to the active upload domain
+        if (raw.includes("virgocrumbs.com")) {
+            const filename = raw.split("/").pop();
+            const base = process.env.NEXT_PUBLIC_IMAGE_UPLOAD_BASE || "https://fouratek.com/uploads";
+            return `${base.replace(/\/+$/, "")}/${filename}`;
+        }
         return raw;
     }
 
