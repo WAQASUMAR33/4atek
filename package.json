@@ -5,8 +5,8 @@
   "scripts": {
     "postinstall": "npx prisma generate",
     "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
+    "build": "next build && node -e \"const fs=require('fs'); if(fs.existsSync('.next/standalone')){ fs.cpSync('public', '.next/standalone/public', {recursive: true, force: true}); fs.cpSync('.next/static', '.next/standalone/.next/static', {recursive: true, force: true}); }\"",
+    "start": "node server.js",
     "lint": "next lint",
     "lint:fix": "next lint --fix",
     "type-check": "tsc --noEmit",

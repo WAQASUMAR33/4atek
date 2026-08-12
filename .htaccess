@@ -1,0 +1,17 @@
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+
+  # Ensure static _next files are never blocked or redirected to html
+  RewriteCond %{REQUEST_URI} ^/_next/static/(.*)$
+  RewriteRule ^_next/static/(.*)$ .next/static/$1 [L]
+
+</IfModule>
+
+# Ensure correct MIME type headers for JavaScript and CSS
+<IfModule mod_mime.c>
+  AddType application/javascript .js .mjs
+  AddType text/css .css
+  AddType image/svg+xml .svg
+  AddType image/webp .webp
+  AddType image/avif .avif
+</IfModule>
