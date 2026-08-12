@@ -21,8 +21,12 @@ export default function QuotePopup() {
 
     // show once per session
     useEffect(() => {
-        const dismissed = sessionStorage.getItem("quotePopupDismissed");
-        if (dismissed) hasShownRef.current = true;
+        try {
+            const dismissed = typeof window !== "undefined" && sessionStorage.getItem("quotePopupDismissed");
+            if (dismissed) hasShownRef.current = true;
+        } catch (e) {
+            // ignore storage access errors
+        }
     }, []);
 
     // timer (e.g., 7s)
@@ -34,7 +38,7 @@ export default function QuotePopup() {
     // scroll (e.g., > 200px)
     useEffect(() => {
         function onScroll() {
-            if (window.scrollY > 200) setScrollReady(true);
+            if (typeof window !== "undefined" && window.scrollY > 200) setScrollReady(true);
         }
         onScroll();
         window.addEventListener("scroll", onScroll, { passive: true });
@@ -51,7 +55,13 @@ export default function QuotePopup() {
 
     // close + remember
     function close() {
-        sessionStorage.setItem("quotePopupDismissed", "1");
+        try {
+            if (typeof window !== "undefined") {
+                sessionStorage.setItem("quotePopupDismissed", "1");
+            }
+        } catch (e) {
+            // ignore storage access errors
+        }
         setOpen(false);
     }
 

@@ -22,6 +22,17 @@ const nextConfig = {
   compress: true,
   poweredByHeader: false,
   
+  // Server-side redirects
+  async redirects() {
+    return [
+      {
+        source: '/home',
+        destination: '/',
+        permanent: true,
+      },
+    ];
+  },
+  
   // Security headers
   async headers() {
     return [
