@@ -71,8 +71,8 @@ export default function ServicesSection({ title = "Our Services" }) {
                 const res = await fetch("/api/services", { cache: "no-store" });
                 const json = await res.json();
                 if (!alive) return;
-                // supports {items:[...]} or [...]
-                const cards = (json?.items || json || []).map(toCard);
+                const raw = Array.isArray(json?.items) ? json.items : Array.isArray(json) ? json : [];
+                const cards = raw.map(toCard);
                 setItems(cards);
             } catch (e) {
                 console.error("Load services failed:", e);

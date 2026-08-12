@@ -1,6 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // Output configuration (standalone is only for Docker, omitted for Hostinger/next start)
+  output: 'standalone',
   
   // Image optimization
   images: { 
